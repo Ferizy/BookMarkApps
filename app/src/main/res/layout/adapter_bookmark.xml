@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/half_dp"
+    android:id="@+id/book_layout"
+    app:ignore="NamespaceTypo">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parentLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorLightGray"
+        android:visibility="gone"
+        app:visibility="visible">
+
+        <com.github.siyamed.shapeimageview.RoundedImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintCircleRadius="10dp"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:siRadius="@dimen/half_dp" />
+
+        <TextView
+            android:id="@+id/publisherTV"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="@dimen/dp_40"
+            android:alpha="0.7"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@+id/imageView"
+            card_view:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/titleTV"
+            style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/half_dp"
+            android:layout_marginRight="@dimen/dp_40"
+            android:alpha="0.9"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/headingMedium"
+            android:textStyle="bold"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="@+id/publisherTV"
+            card_view:layout_constraintTop_toBottomOf="@+id/publisherTV" />
+
+        <TextView
+            android:id="@+id/authorTV"
+            style="@style/TextAppearance.AppCompat.Small"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/half_dp"
+            android:alpha="0.8"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/paragraph"
+            android:textStyle="bold"
+            card_view:layout_constraintEnd_toEndOf="@+id/titleTV"
+            card_view:layout_constraintStart_toStartOf="@+id/titleTV"
+            card_view:layout_constraintTop_toBottomOf="@+id/titleTV" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
